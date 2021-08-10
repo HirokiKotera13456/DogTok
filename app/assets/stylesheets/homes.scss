@@ -2,20 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.main{
-  width: 100%;
-  display:flex;
-  justify-content:center;
-  margin: 0 auto;
-}
+
 
 .background{
   background-image: image-url('dog.jpg');
-  height:640px;
+  height:600px;
   background-repeat: no-repeat;
   opacity: 0.5;
+  background-size: cover;
+  text-align: center;
 }
 
 h1{
+  padding-top: 50px;
+  text-align:center;
   color:blue;
+}
+
+h2{
+  padding-top:50px;
+  text-align:center;
+  padding-bottom:50px;
+}
+
+d-grid gap2{
+  font-size: 5em;
+}
+
+p{
+  margin:auto 50;
 }
