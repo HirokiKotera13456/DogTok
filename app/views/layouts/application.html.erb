@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Dog</title>
+    <title>DogTok</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
+    	
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
     <header>
-      <nav class="navbar navbar-dark bg-primary">
+      <nav class="navbar navbar-dark bg-primary p-4">
         <div class="container">
-          <a class="navbar-brand" href="/"><span>DogTok</span></a>
+          <a class="navbar-brand" href="/"><h2>DogTok</h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -21,7 +24,7 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li>
-                  <%= link_to root_path do %>
+                  <%= link_to dogs_path do %>
                     <i class="fas fa-home nav-link text-light"> Home</i>
                   <% end %>
                 </li>
@@ -31,8 +34,8 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to root_path do %>
-                    <i class="fas fa-book-open nav-link text-light"> Books</i>
+                  <%= link_to dogs_path do %>
+                    <i class="fas fa-book-open nav-link text-light"> dogs</i>
                   <% end %>
                 </li>
                 <li>
