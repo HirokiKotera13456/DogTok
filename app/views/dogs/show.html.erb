@@ -1,5 +1,5 @@
 <div class="dog-body">
-  <%= attachment_image_tag @dog, :image %>
+  <%= attachment_image_tag @dog, :image, size: "300x300" %>
   <p>犬種：<%= @dog.name %></p>
   <p>ワンちゃんについて：<%= @dog.caption %></p>
   <p>ユーザーネーム：<%= @dog.user.name %></p>

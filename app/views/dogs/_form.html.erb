@@ -1,5 +1,6 @@
+
 <h1>画像投稿フォーム</h1>
-<%= form_with model: @newdog, local:true do |f| %>
+<%= form_with model: dog, local:true do |f| %>
   <h4>画像</h4>
   <%= f.attachment_field :image %>
   <h4>犬</h4>

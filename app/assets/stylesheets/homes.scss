@@ -4,7 +4,7 @@
 
 
 
-.background{
+.background1{
   background-image: image-url('dog.jpg');
   height:900px;
   background-position:center;
@@ -14,23 +14,19 @@
   text-align: center;
 }
 
-h1{
+.top-text{
   font-family: 'Corben', cursive;
   padding-top: 50px;
   text-align:center;
   color:blue;
 }
 
-h2{
+.top-text2{
+  font-family: 'Corben', cursive;
   padding-top:50px;
-  text-align:center;
   padding-bottom:50px;
 }
 
 d-grid gap2{
   font-size: 5em;
-}
-
-p{
-  margin:auto 50;
 }

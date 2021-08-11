@@ -1,11 +1,15 @@
 class DogsController < ApplicationController
-  
+
 
   def create
-    @dog = Dog.new(dog_params)
-    @dog.user_id = current_user.id
-    @dog.save
-    redirect_to dogs_path
+    @dogs = Dog.all
+    @newdog = Dog.new(dog_params)
+   if @newdog.save
+     redirect_to dogs_path
+   else
+      @user = current_user
+      render :index
+   end
   end
 
   def index
@@ -22,11 +26,11 @@ class DogsController < ApplicationController
     @dog.destroy
     redirect_to dogs_path
   end
-  
+
   private
 
   def dog_params
     params.require(:dog).permit(:name, :image, :caption)
   end
-  
+
 end
