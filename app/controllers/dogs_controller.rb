@@ -6,7 +6,7 @@ class DogsController < ApplicationController
     @newdog = Dog.new(dog_params)
     @newdog.user_id = current_user.id
    if @newdog.save
-     redirect_to dogs_path
+     redirect_to dogs_path, notice: "投稿されました"
    else
       @user = current_user
       render :index
@@ -16,9 +16,19 @@ class DogsController < ApplicationController
   def index
     @newdog = Dog.new
     @dogs = Dog.all
-
     @user = current_user
   end
+  
+  def edit
+    @dog = Dog.find(params[:id])
+  end
+  
+  def update
+    @dog = Dog.find(params[:id])
+    @dog.update(dog_params)
+    redirect_to dog_path(@dog.id)
+  end
+  
 
   def show
     @dog=Dog.find(params[:id])
@@ -28,7 +38,7 @@ class DogsController < ApplicationController
   def destroy
     @dog = Dog.find(params[:id])
     @dog.destroy
-    redirect_to dogs_path
+    redirect_to dogs_path, notice: "削除されました"
   end
 
   private
