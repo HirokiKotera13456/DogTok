@@ -18,15 +18,63 @@
 @import 'font-awesome';
 @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
 
-* {
-  margin: 0px;
-  padding: 0px;
-  text-decoration: none;
-}
-
 body {
 font-family: 'Kosugi Maru', sans-serif;
 line-height:25px;
 font-size:0.95em;
 }
 
+//topページ//
+
+.background1{
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  background-size: cover;
+  text-align: center;
+}
+
+#container1{
+  background-size: cover;
+  height: 630px;
+}
+
+.top-text{
+  padding-top: 50px;
+  text-align:center;
+  color: rgba(175,238,238,1.0);
+  font-family: "Nico Moji";
+}
+
+
+
+
+.top-text2{
+  font-family: 'Corben', cursive;
+  text-align:center;
+  padding-top:50px;
+  padding-bottom:50px;
+  color: rgba( 0,0,105, 0.9);
+}
+
+d-grid gap2{
+  font-size: 5em;
+}
+
+.image1 {
+  background-image: url(image1.jpg);
+}
+.image2 {
+  background-image: url(image2.jpg);
+}
+.image3 {
+  background-image: url(image3.jpg);
+}
+.image4 {
+  background-image: url(image4.jpg);
+}
+.image5 {
+  background-image: url(image5.jpg);
+}
+
+
+//topページ//

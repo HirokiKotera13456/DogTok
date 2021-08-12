@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
     
     	
-    
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     
@@ -25,7 +25,7 @@
               <% if user_signed_in? %>
                 <li>
                   <%= link_to user_path(current_user.id) do %>
-                    <i class="fas fa-home nav-link text-light"> Home</i>
+                    <i class="fas fa-home nav-link text-light"> MyPage</i>
                   <% end %>
                 </li>
                 <li>
@@ -35,7 +35,7 @@
                 </li>
                 <li>
                   <%= link_to dogs_path do %>
-                    <i class="fas fa-book-open nav-link text-light"> dogs</i>
+                    <i class="fas fa-dog nav-link text-light"> Dogs</i>
                   <% end %>
                 </li>
                 <li>
