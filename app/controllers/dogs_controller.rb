@@ -33,6 +33,7 @@ class DogsController < ApplicationController
   def show
     @dog=Dog.find(params[:id])
     @user = @dog.user
+    @dog_comment = DogComment.new
   end
 
   def destroy
