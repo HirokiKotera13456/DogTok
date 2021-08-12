@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :dogs, only: [:new, :create, :index, :show, :destroy, :edit, :update] do
+    resource :favorites, only: [:create, :destroy]
     resources :dog_comments, only: [:create, :destroy]
   end
   
