@@ -25,8 +25,11 @@ class DogsController < ApplicationController
   
   def update
     @dog = Dog.find(params[:id])
-    @dog.update(dog_params)
-    redirect_to dog_path(@dog.id)
+    if @dog.update(dog_params)
+      redirect_to dog_path(@dog.id),notice: "編集されました"
+    else
+      render :edit
+    end
   end
   
 
