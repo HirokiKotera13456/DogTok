@@ -9,25 +9,16 @@
     <%= link_to "削除", dog_path(@dog), method: :delete %>
   <% end %>
 </div>
-
-<div class="comments">
-<p>コメント件数：<%= @dog.dog_comments.count %></p>
-<% @dog.dog_comments.each do |dog_comment| %>
-  <p><%= image_tag('no_image.jpg') %></p>
-  <%= dog_comment.user.name %>
-  <%= dog_comment.created_at.strftime('%Y/%m/%d') %><%= dog_comment.comment %>
-  <% if dog_comment.user == current_user %>
-  <div class="comment-delete">
-    <%= link_to "削除", dog_dog_comment_path(dog_comment.dog, dog_comment), method: :delete %>
-  </div>
-  <% end %>
-<% end %>
+<div id="dog_comments_<%= @dog.id %>">
+  <%= render 'dog_comments/dog_comments', dog: @dog %>
 </div>
+
 <div class="new-comment">
-<%= form_with(model:[@dog, @dog_comment], local: true) do |f| %>
+<%= form_with(model:[@dog, @dog_comment], remote: true) do |f| %>
   <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
   <%= f.submit "送信する" %>
 <% end %>
 
-
-<%= render 'favorites/favorite' , dog: @dog %>
+<div id="favorite-btn_<%= @dog.id %>">
+  <%= render 'favorites/favorite' , dog: @dog %>
+</div>
