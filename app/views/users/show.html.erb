@@ -2,6 +2,8 @@
 <%= attachment_image_tag @user, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "40x40" %>
 <div class="profile-container">
   <h3 class="profile-name"><%= @user.name %></h3>
+
+  
     <% if @user.id == current_user.id %>
     <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
   <% end %>
