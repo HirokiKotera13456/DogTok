@@ -1,15 +1,12 @@
-<%= render 'dogs/error', model: @newdog %>
-<%= render 'dogs/form', dog: @newdog %>
+<div class="container mt-6">
+  <%= render 'dogs/error', model: @newdog %>
+  <div class="row">
+    <div class="col-md-10">
+      <%= render 'dogs/form', dog: @newdog %>
+    </div>
+    
+    <%= render 'dogs/dogs',dogs: @dogs %>
+      
 
-<% @dogs.each do |dog| %>
-
-<div>
-  <%= attachment_image_tag dog, :image, size: "300x300" %>
-  <%= link_to dog_path(dog.id) do %>
-    <p>犬種：<%= dog.name %></p>
-  <% end %>
-  <p>ワンちゃんについて：<%= dog.caption %></p>
-  <p>ユーザーネーム：<%= dog.user.name %></p>
-  
+  </div>  
 </div>
-<% end %>

@@ -4,12 +4,12 @@
     <title>DogTok</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
-    	
+
+
     <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
   </head>
 
   <body>
@@ -42,7 +42,7 @@
                   <%= link_to destroy_user_session_path, method: :delete  do %>
                     <i class="fas fa-sign-out-alt nav-link text-light"> logout</i>
                   <% end %>
-                </li>  
+                </li>
               <% else %>
                 <li>
                   <%= link_to root_path do %>
@@ -79,8 +79,8 @@
         </div>
       <% end %>
        <%= yield %>
-       
-  
-           
+
+
+
   </body>
 </html>
