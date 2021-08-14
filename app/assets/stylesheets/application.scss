@@ -24,6 +24,13 @@ line-height:25px;
 font-size:0.95em;
 }
 
+.link{
+  color:rgb(50,255,255);
+}
+
+.input{
+  line-height: 0.8;
+}
 
 
 //topページ//
@@ -99,6 +106,12 @@ p{
 
 //犬一覧//
 
+.attachment{
+  border-radius: 40%;
+}
+
+//犬一覧
+
 //いいねボタン
 .like-btn{
   color: red;
@@ -108,3 +121,10 @@ p{
   color: #808080;
 }
 //いいねボタン
+
+//犬詳細
+
+.link1{
+  color:rgb(160,160,160);
+}
+//犬詳細

@@ -6,22 +6,21 @@
           <tbody>
             <tr>
               <td>
-                <%= attachment_image_tag @user, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "40x40" %>
+                <%= attachment_image_tag @user, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "80x80" %>
               </td>
               <td>
                 ユーザー名：<%= @user.name %>
               </td>
               <td>
               <% if @user.id == current_user.id %>
-                <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+                <p><%= link_to "プロフィール編集", edit_user_path(@user),class:"link" %></p>
               <% end %>
               </td>
             </tr>
           </tbody>
         </table>
-    </div>    
+    </div>
   </div>
       <h2><p class="your-submit">あなたの投稿</p></h2>
       <%= render 'dogs/dogs',dogs: @dogs %>
 </div>
-    

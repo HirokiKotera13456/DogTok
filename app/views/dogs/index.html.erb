@@ -1,12 +1,14 @@
-<div class="container mt-6">
-  <%= render 'dogs/error', model: @newdog %>
+<div class="container">
   <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-6 offset-md-3 ">
+      <%= render 'dogs/error', model: @newdog %>
       <%= render 'dogs/form', dog: @newdog %>
+      
     </div>
     
-    <%= render 'dogs/dogs',dogs: @dogs %>
-      
-
-  </div>  
+    
+    <div class="col-md-12">
+      <%= render 'dogs/dogs',dogs: @dogs %>
+    </div>
+  </div>
 </div>
