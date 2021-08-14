@@ -13,7 +13,7 @@
               </td>
               <td>
               <% if @user.id == current_user.id %>
-                <p><%= link_to "プロフィール編集", edit_user_path(@user),class:"link" %></p>
+                <p><%= link_to "プロフィール編集", edit_user_path(@user),class:"btn btn-outline-info" %></p>
               <% end %>
               </td>
             </tr>
@@ -21,6 +21,6 @@
         </table>
     </div>
   </div>
-      <h2><p class="your-submit">あなたの投稿</p></h2>
+      <h2><p class="your-submit"><%= @user.name %>の投稿</p></h2>
       <%= render 'dogs/dogs',dogs: @dogs %>
 </div>
