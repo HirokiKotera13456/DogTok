@@ -16,6 +16,20 @@
                 <p><%= link_to "プロフィール編集", edit_user_path(@user),class:"btn btn-outline-info" %></p>
               <% end %>
               </td>
+              <td>
+                <% unless @user.id == current_user.id %>
+                  <% if @isRoom == true %>
+                    <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-outline-success">チャットへ</a>
+                  <% else %>
+                    <%= form_for @room do |f| %>
+                      <%= fields_for @entry do |e| %>
+                        <%= e.hidden_field :user_id, value: @user.id %>
+                      <% end %>
+                      <%= f.submit "チャットを始める", class:"btn btn-primary btn-lg user-show-chat"%>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -24,3 +38,4 @@
       <h2><p class="your-submit"><%= @user.name %>の投稿</p></h2>
       <%= render 'dogs/dogs',dogs: @dogs %>
 </div>
+
