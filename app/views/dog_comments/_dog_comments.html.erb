@@ -3,7 +3,7 @@
   <tbody>
     <tr>
         <th><% dog.dog_comments.each do |dog_comment| %></th>
-          <th><%= image_tag('no_image.jpg') %></th>
+         <th><%= attachment_image_tag @user, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "80x80" %></th
           <th><p>ユーザーネーム：<%= dog_comment.user.name %></p></th>
           <th>「<%= dog_comment.comment %>」</th>
           <th><% if dog_comment.user == current_user %>
