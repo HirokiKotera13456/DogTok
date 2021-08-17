@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="col-xs-12">
+    <% if @model == "user" %>
+    <h2>Users search for '<%= @value %>'</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+            </tr>
+        </thead>
+    <% @datas.each do |user| %>
+        <tbody>
+            <tr>
+                <th>
+                    <%= attachment_image_tag(user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size:'40x40') %>
+                </th>
+                <th>
+                    <%= user.name %>
+                </th>
+            </tr>
+        </tbody>
+    <% end %>
+    <% elsif @model == "dog" %>
+    <h2>Dogs search for '<%= @value %>'</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>name</th>
+                <th>caption</th>
+            </tr>
+        </thead>
+        <% @datas.each do |dog| %>
+        <tbody>
+            <tr>
+                <th>
+                    <%= attachment_image_tag(dog.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size:'40x40') %>
+                </th>
+                <th>
+                    <%= dog.name %>
+                </th>
+                <th>
+                    <%= dog.caption %>
+                </th>
+            </tr>
+        </tbody>
+        <% end %>
+    <% end %>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+    <header>
+      <nav class="navbar navbar-dark bg-primary p-4">
+        <div class="container">
+          <a class="navbar-brand" href="/"><h2>DogTok</h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <% if user_signed_in? %>
+                <li>
+                  <%= link_to user_path(current_user.id) do %>
+                    <i class="fas fa-home nav-link text-light"> MyPage</i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to users_path do %>
+                    <i class="fas fa-users nav-link text-light"> Users</i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to dogs_path do %>
+                    <i class="fas fa-dog nav-link text-light"> Dogs</i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to destroy_user_session_path, method: :delete  do %>
+                    <i class="fas fa-sign-out-alt nav-link text-light"> logout</i>
+                  <% end %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to root_path do %>
+                    <i class="fas fa-home nav-link text-light"> Home</i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_user_registration_path do %>
+                    <i class="fas fa-user-plus nav-link text-light"> sign up</i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to user_session_path do %>
+                    <i class="fas fa-sign-in-alt nav-link text-light"> login</i>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>

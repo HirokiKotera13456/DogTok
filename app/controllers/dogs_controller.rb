@@ -1,6 +1,5 @@
 class DogsController < ApplicationController
 
-
   def create
     @dogs = Dog.all
     @newdog = Dog.new(dog_params)
@@ -32,7 +31,7 @@ class DogsController < ApplicationController
     end
   end
   
-
+    
   def show
     @dog=Dog.find(params[:id])
     @user = @dog.user
@@ -44,6 +43,7 @@ class DogsController < ApplicationController
     @dog.destroy
     redirect_to dogs_path, notice: "削除されました"
   end
+
 
   private
 
