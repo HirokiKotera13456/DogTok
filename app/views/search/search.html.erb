@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col-xs-12">
     <% if @model == "user" %>
-    <h2>Users search for '<%= @value %>'</h2>
+    <h2><p>検索結果 '<%= @value %>'</p></h2>
     <table class="table">
         <thead>
             <tr>
@@ -13,7 +13,7 @@
         <tbody>
             <tr>
                 <th>
-                    <%= attachment_image_tag(user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size:'40x40') %>
+                    <%= attachment_image_tag(user, :profile_image, :fill, 80, 80, fallback: "no_image.jpg", size:'40x40') %>
                 </th>
                 <th>
                     <%= user.name %>
@@ -22,7 +22,7 @@
         </tbody>
     <% end %>
     <% elsif @model == "dog" %>
-    <h2>Dogs search for '<%= @value %>'</h2>
+    <h2>検索結果 '<%= @value %>'</h2>
     <table class="table">
         <thead>
             <tr>
@@ -35,7 +35,7 @@
         <tbody>
             <tr>
                 <th>
-                    <%= attachment_image_tag(dog.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size:'40x40') %>
+                    <%= attachment_image_tag(dog.user, :profile_image, :fill, 80, 80, fallback: "no_image.jpg", size:'40x40') %>
                 </th>
                 <th>
                     <%= dog.name %>
