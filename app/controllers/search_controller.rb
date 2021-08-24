@@ -1,16 +1,15 @@
 class SearchController < ApplicationController
-  
+
   def search
-    @model = params["search"]["model"]
-    @value = params["search"]["value"]
-    @how = params["search"]["how"]
+    @model = params["model"]
+    @value = params["value"]
+    @how = params["how"]
     @datas = search_for(@how, @model, @value)
   end
-  
 
-  
+
   private
-  
+
   def match(model,value)
     if model == 'user'
       User.where(name: value)
@@ -18,7 +17,7 @@ class SearchController < ApplicationController
       Dog.where(name: value)
     end
   end
-  
+
   def forward(model,value)
     if model == 'user'
       User.where("name LIKE ?", "#{value}%")
@@ -26,7 +25,7 @@ class SearchController < ApplicationController
       Dog.where("name LIKE ?", "#{value}%")
     end
   end
-  
+
   def backward(model,value)
     if model == 'user'
       User.where("name LIKE ?", "%#{value}")
@@ -34,20 +33,20 @@ class SearchController < ApplicationController
       Dog.where("name LIKE ?", "%#{value}")
     end
   end
-  
+
   def partical(model,value)
     if model == 'user'
-      User.where("name LIKE ?", "%#{value}")
+      User.where("name LIKE ?", "%#{value}%")
     elsif model == 'dog'
-      Dog.where("name LIKE ?", "%#{value}")
+      Dog.where("name LIKE ?", "%#{value}%")
     end
   end
-  
+
   def search_for(how, model, value)
     case how
     when 'match'
       match(model, value)
-    when 'forward'                        #例えばhowがmatchの場合は def match の処理に進みます
+    when 'forward'
       forward(model, value)
     when 'backward'
       backward(model, value)
@@ -55,5 +54,5 @@ class SearchController < ApplicationController
       partical(model, value)
     end
   end
-  
+
 end
