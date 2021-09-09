@@ -33,6 +33,7 @@ class DogsController < ApplicationController
   
     
   def show
+    @review = Review.new
     @dog=Dog.find(params[:id])
     @user = @dog.user
     @dog_comment = DogComment.new

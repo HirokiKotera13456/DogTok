@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+  get 'maps/index'
+  resources :maps, only: [:index]
   get 'search/search'
   get 'homes/about'
   root "homes#top"
   get '/search' => 'search#search'
-
   devise_for :users
+  
   resources :dogs, only: [:new, :create, :index, :show, :destroy, :edit, :update] do
+    resources :reviews, only: [:index, :create]
     resource :favorites, only: [:create, :destroy]
     resources :dog_comments, only: [:create, :destroy]
   end

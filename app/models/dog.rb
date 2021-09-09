@@ -3,7 +3,8 @@ class Dog < ApplicationRecord
   attachment :image
   has_many :dog_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
-
+  has_many :reviews, dependent: :destroy
+  
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end

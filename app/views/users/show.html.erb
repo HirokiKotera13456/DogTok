@@ -39,3 +39,7 @@
       <%= render 'dogs/dogs',dogs: @dogs %>
 </div>
 
+<%= current_user.dogs.where('created_at > ?', Date.today).count %>
+<%= current_user.dogs.where('created_at > ?', Date.new).count %>
+<%= current_user.dogs.where('created_at > ?', Date.today).count %>
+
