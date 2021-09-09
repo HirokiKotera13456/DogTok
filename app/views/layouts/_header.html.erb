@@ -27,6 +27,11 @@
                   <%= link_to destroy_user_session_path, method: :delete  do %>
                     <i class="fas fa-sign-out-alt nav-link text-light"> logout</i>
                   <% end %>
+                <li>
+                  <%= link_to maps_index_path do %>
+                    <i class="fas fa-dog nav-link text-light"> Cafe</i>
+                  <% end %>
+                </li>
                 </li>
               <% else %>
                 <li>

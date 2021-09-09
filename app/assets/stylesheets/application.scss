@@ -22,6 +22,7 @@ body {
 font-family: 'Kosugi Maru', sans-serif;
 line-height:25px;
 font-size:0.95em;
+background:radial-gradient(#f8f8ff, #f0fff0);
 }
 
 .link{
@@ -83,6 +84,13 @@ d-grid gap2{
 }
 .image5 {
   background-image: url(image5.jpg);
+}
+
+.green {
+  width:500px;
+  height:500px;
+  background-size: cover;
+  background-image: url(green.jpg);
 }
 
 
