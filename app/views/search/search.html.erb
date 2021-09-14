@@ -43,6 +43,13 @@
                 <th>
                     <%= dog.caption %>
                 </th>
+                <th>
+                <p>
+                  <% dog.categories.each do |category| %>
+                    <%= category.name %>
+                   <% end %>
+                </p>
+                </th>
             </tr>
         </tbody>
         <% end %>
