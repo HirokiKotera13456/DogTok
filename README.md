@@ -1,24 +1,5 @@
-# README
+プログラミング学習をはじめて1か月目の自作アプリケーションです。
+herokuでデプロイしております。（アプリケーションURL:https://dogtok.herokuapp.com/）
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+自慢のワンちゃんの写真と説明を投稿するアプリケーションです。
+基本的なCRUD機能、ユーザーログイン機能（新規登録、ログイン、ログアウト）、ユーザー同士のフォロー機能、フォロワー同士のチャット機能、検索機能などを搭載しております。
